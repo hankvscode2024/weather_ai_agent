@@ -39,7 +39,7 @@ def get_current_weather(city: str, unit: str = "celsius"):
         raise RuntimeError(
             "Missing OpenWeatherMap API key. Set OPENWEATHER_API_KEY or WEATHER_API_KEY in your environment."
         )
-    base_url = "http://api.openweathermap.org/data/2.5/weather"
+    base_url = "https://api.openweathermap.org/data/2.5/weather"
     units_param = "metric" if unit == "celsius" else "imperial"
     params = {"q": city, "appid": WEATHER_API_KEY, "units": units_param}
     response = requests.get(base_url, params=params, timeout=15)
